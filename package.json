@@ -1,0 +1,19 @@
+{
+  "name": "angular-js-employee-crud",
+  "version": "1.0.0",
+  "description": "Simple crud with angular js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahsoromdoni/angular-js-employee-crud.git"
+  },
+  "author": "Ahmad Solehudin Romdoni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahsoromdoni/angular-js-employee-crud/issues"
+  },
+  "homepage": "https://github.com/ahsoromdoni/angular-js-employee-crud#readme"
+}
