@@ -1,5 +1,75 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div class="container">
+  <div class="home">
+    <div class="container">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4 ml-5">Add New Employee</h1>
+          <p class="lead ml-5">Fill In All Forms To Add New Employee.</p>
+        </div>
+      </div>
+      <form class="form-horizontal" ng-controller="View2Ctrl">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-4 text-left">
+              <label for="exampleInputName2" style="margin-left: 30px;">Name</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Input Name" ng-model="name" required>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4 text-left">
+              <label for="exampleInputName2" style="margin-left: 30px;">Birth Date</label>
+            </div>
+            <div class="col-md-6">
+              <input type="date" class="form-control" placeholder="YYYY-MM-DD" ng-model="birthDate" required>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4 text-left">
+              <label style="margin-left: 30px;">Position</label>
+            </div>
+            <div class="col-md-6">
+              <select class="form-control" ng-model="positionId" ng-change="something(positionId)"
+                ng-options="payload.id as payload.name for payload in value" required>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4 text-left">
+              <label for="exampleInputName2" style="margin-left: 30px;">NIP</label>
+            </div>
+            <div class="col-md-6">
+              <input type="number" class="form-control" placeholder="Input NIP" ng-model="idNumber" required>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4 text-left">
+              <label for="exampleInputName2" style="margin-left: 30px;">Gender</label>
+            </div>
+            <div class="col-md-6">
+              <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" ng-model="gender" ng-value="1"> Men
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" ng-model="gender" ng-value="2"> Women
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <a class="btn btn-dark mr-2" type="button" ng-click="postData(name,birthDate,positionId,idNumber,gender)"><i
+              class="fa fa-check-circle fa-lg mr-2"></i>Save</a>
+          <a class="btn btn-danger ml-2" href="#!/view1"><i class="fa fa-chevron-circle-left fa-lg mr-2"></i>Back</a>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+
+</div>
