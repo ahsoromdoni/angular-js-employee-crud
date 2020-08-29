@@ -1,1 +1,37 @@
-<p>This is the partial for view 1.</p>
+<div ng-app="listService" ng-controller="getEmployees" class="container">
+    <div class="home">
+        <a class="btn btn-dark mt-2 mb-2" href="#!/view2/id"><i class="fa fa-plus-circle fa-lg mr-2"></i>Add New
+            Employee</a>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-dark">
+                <thead class="text-center">
+                    <td><strong>#</strong></td>
+                    <td><strong>Name</strong></td>
+                    <td><strong>Birth Date</strong></td>
+                    <td><strong>Position</strong></td>
+                    <td><strong>NIP</strong></td>
+                    <td><strong>Gender</strong></td>
+                    <td><strong>Action</strong></td>
+                </thead>
+                <tr ng-repeat="data in value" ng-controller="deleteServiceCtrl">
+                    <td ng-model="id">{{data.id}}</td>
+                    <td ng-model="name">{{data.name}}</td>
+                    <td ng-model="birthDate">{{data.birthDate | date}}</td>
+                    <td>{{data.position.name}}</td>
+                    <td ng-model="idNumber">{{data.idNumber}}</td>
+                    <td ng-model="gender" ng-If="data.gender==1">Pria</td>
+                    <td ng-model="gender" ng-If="data.gender==2">Wanita</td>
+                    <td class="text-center">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a class="btn btn-warning" href="#!/Edit/{{data.id}}"><i class="fa fa-pencil fa-lg"></i></a>
+
+                            <a class="btn btn-danger" ng-click="deletedata(data.id)"><i
+                                    class="fa fa-times-circle-o fa-lg"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
